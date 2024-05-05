@@ -1,5 +1,8 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <BackgroundCurves />
 </template>
+
+<script setup>
+import BackgroundCurves from '@/components/BackgroundCurves.vue';
+
+</script>

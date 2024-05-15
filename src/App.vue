@@ -10,6 +10,11 @@ import AppHeader from '@/components/AppHeader.vue';
 <style>
 body {
   background-color: black;
+  height: calc(100% - 16px);
+}
+
+html {
+  height: 100%;
 }
 
 :root {

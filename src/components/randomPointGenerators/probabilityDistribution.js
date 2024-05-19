@@ -1,12 +1,14 @@
+const normalPdf = require('@stdlib/stats-base-dists-normal-pdf');
 
-const gamma = require('@stdlib/random-base-gamma');
-
-export function ringStrategy() {
+export function ringStrategy(dimensions) {
+  const shortSide = Math.min(dimensions.width, dimensions.height);
+  const mu = shortSide / 4;
+  const sigma = shortSide / 6;
+  const xOffset = dimensions.width / 2;
+  const yOffset = dimensions.height / 2;
   return (x, y) => {
-    const r = x ** 2 + y ** 2
-    const alpha = r;
-    const beta = 3 * r;
-    return gamma(alpha, beta);
+    const r = Math.sqrt((x - xOffset) ** 2 + (y - yOffset) ** 2);
+    return normalPdf(r, mu, sigma) * 20;
   }
 }
 

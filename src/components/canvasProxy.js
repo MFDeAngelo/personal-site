@@ -10,7 +10,6 @@ export default class CanvasProxy {
 
   clear() {
     let context = canvas.getContext('2d');
-    console.log('Clear!');
     context.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
 
@@ -19,19 +18,18 @@ export default class CanvasProxy {
     context.strokeStyle = 'rgb(1,255,255)';
     context.lineWidth = 2;
     context.beginPath();
-    context.moveTo(points[0][0], points[0][1]);
+    context.moveTo(points[0].x, points[0].y);
     for (let i = 1; i < points.length; i += 1) {
-      let point = points[i];
-      context.lineTo(point[0], point[1]);
+      context.lineTo(points[i].x, points[i].y);
     }
     context.stroke();
   }
 
-  drawPoint(x, y) {
+  drawPoint(point) {
     const size = 10;
     const offset = size / 2;
     let context = this.context;
     context.fillStyle = 'red';
-    context.fillRect(x - offset, y - offset, size, size);
+    context.fillRect(point.x - offset, point.y - offset, size, size);
   }
 }

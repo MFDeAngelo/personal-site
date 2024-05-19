@@ -30,7 +30,7 @@ export function* enumerateSamplePoints(maxSamples, dimmensions) {
 }
 
 export function getRandomPoint(dimmensions) {
-  const pdf = ringStrategy();
+  const pdf = ringStrategy(dimmensions);
   const weightedPoints = [...enumerateSamplePoints(10000, dimmensions)]
     .map(point => {
       const weight = pdf(point.x, point.y);

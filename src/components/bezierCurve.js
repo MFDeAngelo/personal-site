@@ -1,7 +1,7 @@
 import CanvasProxy from '@/components/canvasProxy';
 import { getRandomPoint } from './randomPointGenerators/randomPointGenerator';
 
-// Bottleneck: compute t's first. Avoid **. Will greatly reduce computations.
+// Optimize: compute t's first. Avoid **. Will greatly reduce computations.
 function createBezierCurve(bezierPoints) {
   return (t) => {
     return {
@@ -36,23 +36,21 @@ export default async function animate(canvas) {
   const canvasProxy = new CanvasProxy(canvas);
   const dim = canvasProxy.getDimensions();
 
-  const bezierIterator = generate(dim);
+  const curveIterator = generateCurve(dim);
+  const points = [];
   while (true) {
-    const bezierPoints = bezierIterator.next().value;
-    const bezierCurve = createBezierCurve(bezierPoints);
-
-    const points = [];
-    for (let i = 0; i <= 1.01; i += 0.01) {
-      points.push(bezierCurve(i));
+    points.push(curveIterator.next().value);
+    if (points.length > 100) {
+      points.shift();
     }
-    // canvasProxy.clear();
+    canvasProxy.clear();
     canvasProxy.drawLine(points);
-    await timeout(1000);
+    await timeout(10);
 
   }
 }
 
-export function* generate(dimensions) {
+export function* generateBezierSegments(dimensions) {
   let lastBezier = { endPoint: { x: 0, y: 0 }, endVector: { x: dimensions.width / 3, y: 0 } };
   while (true) {
     const startPoint = lastBezier.endPoint;
@@ -65,5 +63,18 @@ export function* generate(dimensions) {
 
     lastBezier = { startPoint, startVector, endPoint, endVector };
     yield lastBezier;
+  }
+}
+
+function* generateCurve(dimensions) {
+  const bezierIterator = generateBezierSegments(dimensions);
+  while (true) {
+    const bezierPoints = bezierIterator.next().value;
+    const bezierCurve = createBezierCurve(bezierPoints);
+
+    for (let i = 0; i <= 1.01; i += 0.01) {
+      yield bezierCurve(i);
+    }
+
   }
 }

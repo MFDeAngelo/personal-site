@@ -15,7 +15,7 @@ export default class CanvasProxy {
 
   drawLine(points) {
     let context = this.context;
-    context.strokeStyle = 'rgb(1,255,255)';
+    context.strokeStyle = 'fuchsia';
     context.lineWidth = 2;
     context.beginPath();
     context.moveTo(points[0].x, points[0].y);

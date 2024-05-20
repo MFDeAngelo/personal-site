@@ -28,15 +28,7 @@
 
   <h3 class="section-title">Certifications</h3>
   <div class="center-wrap">
-    <div v-for="cert in certificates" :key=cert.name class="cert-card">
-      <img :src=cert.img alt="Certification Seal" />
-      <div style="width:75%;float:right;">
-        <h2>{{ cert.name }}</h2>
-        <p>{{ cert.description }}</p>
-        <p class="date">{{ cert.validDate }}</p>
-        <a :href=cert.verification>Verification</a>
-      </div>
-    </div>
+    <CertificateCard v-for="cert in certificates" :key=cert.name :certificate=cert />
   </div>
 
   <div id="books">
@@ -52,29 +44,11 @@
 <script setup>
 import certificates from '@/data/certificates';
 import books from '@/data/books';
+
+import CertificateCard from '@/components/education/CertificateCard.vue';
 </script>
 
 <style scoped>
-.cert-card {
-  margin: 20px;
-  border-width: 2px;
-  border-color: var(--primary-color);
-  border-radius: 20px;
-  border-style: solid;
-  display: flex;
-  gap: 12px;
-  padding: 8px;
-  color: var(--primary-color);
-  text-align: left;
-  max-width: calc(50% - 80px);
-  min-width: 700px;
-}
-
-.cert-card img {
-  width: 250px;
-  height: 250px;
-}
-
 .center-wrap {
   display: flex;
   flex-wrap: wrap;

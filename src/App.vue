@@ -1,10 +1,14 @@
 <template>
-  <AppHeader></AppHeader>
-  <router-view />
+  <div style="position: relative">
+    <AppHeader></AppHeader>
+    <BackgroundCurves style="position: absolute; z-index: -100;" />
+    <router-view />
+  </div>
 </template>
 
 <script setup>
 import AppHeader from '@/components/AppHeader.vue';
+import BackgroundCurves from '@/components/BackgroundCurves.vue';
 </script>
 
 <style>
@@ -27,5 +31,9 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--primary-color);
+}
+
+a {
+  color: fuchsia;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div style="position: relative">
-    <AppHeader></AppHeader>
     <BackgroundCurves style="position: absolute; z-index: -100;" />
+    <AppHeader></AppHeader>
     <router-view />
   </div>
 </template>
@@ -12,6 +12,8 @@ import BackgroundCurves from '@/components/BackgroundCurves.vue';
 </script>
 
 <style>
+@import '@/style/scrollbar.css';
+
 body {
   background-color: black;
   height: calc(100% - 16px);
@@ -35,5 +37,9 @@ html {
 
 a {
   color: fuchsia;
+}
+
+.center {
+  text-align: center;
 }
 </style>

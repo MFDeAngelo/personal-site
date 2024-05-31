@@ -1,8 +1,10 @@
 <template>
-  <div style="position: relative">
+  <div style="position: relative;">
     <BackgroundCurves style="position: absolute; z-index: -100;" />
     <AppHeader></AppHeader>
-    <router-view />
+    <div style="width: 100vw; height: 100vh; overflow: auto;">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -17,10 +19,11 @@ import BackgroundCurves from '@/components/BackgroundCurves.vue';
 body {
   background-color: black;
   height: calc(100% - 16px);
+  margin: 0px;
 }
 
 html {
-  height: 100%;
+  overflow: hidden;
 }
 
 :root {

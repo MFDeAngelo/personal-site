@@ -1,16 +1,9 @@
 <template>
-  <div style="position: relative;">
-    <BackgroundCurves style="position: absolute; z-index: -100;" />
-    <AppHeader></AppHeader>
-    <div style="width: 100vw; height: 100vh; overflow: auto;">
-      <router-view />
-    </div>
-  </div>
+  <PersonalSite></PersonalSite>
 </template>
 
 <script setup>
-import AppHeader from '@/components/AppHeader.vue';
-import BackgroundCurves from '@/components/BackgroundCurves.vue';
+import PersonalSite from '@/PersonalSite.vue';
 </script>
 
 <style>
@@ -18,7 +11,6 @@ import BackgroundCurves from '@/components/BackgroundCurves.vue';
 
 body {
   background-color: black;
-  height: calc(100% - 16px);
   margin: 0px;
 }
 

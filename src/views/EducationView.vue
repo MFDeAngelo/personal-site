@@ -2,8 +2,7 @@
   <div style="justify-content: center;">
     <h3 class="section-title">Formal Education</h3>
     <div class="center-wrap">
-      <div class="card">
-        <img src="@/assets/Utah_State_University_seal.svg" alt="The Utah State University Seal" />
+      <Card img="education/Utah_State_University_seal.svg">
         <div>
           <h4 class="center">Utah State University</h4>
           <div class="flex">
@@ -24,7 +23,7 @@
           </div>
           <p class="center date"> Sept 2016 - May 2020</p>
         </div>
-      </div>
+      </Card>
     </div>
 
     <h3 class="section-title">Certifications</h3>
@@ -46,6 +45,7 @@ import certificates from '@/data/certificates';
 import books from '@/data/books';
 
 import CertificateCard from '@/components/education/CertificateCard.vue';
+import Card from '@/components/education/Card.vue';
 import Book from '@/components/education/Book.vue';
 </script>
 
@@ -54,26 +54,6 @@ import Book from '@/components/education/Book.vue';
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.card {
-  margin: 20px;
-  border-width: 2px;
-  border-color: var(--primary-color);
-  border-radius: 20px;
-  border-style: solid;
-  display: flex;
-  gap: 12px;
-  padding: 8px;
-  color: var(--primary-color);
-  text-align: left;
-  max-width: calc(50% - 80px);
-  min-width: 700px;
-}
-
-.card:hover {
-  border-color: fuchsia;
-  background-color: black;
 }
 
 .section-title {

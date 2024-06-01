@@ -19,7 +19,7 @@ html {
 }
 
 :root {
-  --primary-color: #F0F0F0;
+  --primary-color: #E0E0E0;
   --primary-color-inactive: #D0D0D0;
 }
 

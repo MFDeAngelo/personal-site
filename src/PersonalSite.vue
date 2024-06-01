@@ -22,7 +22,6 @@ import BackgroundCurves from '@/components/BackgroundCurves.vue';
 .router {
   flex: 0 1 auto;
   overflow: auto;
-  width: 1200px;
 }
 
 .background {

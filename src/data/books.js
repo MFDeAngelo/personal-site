@@ -1,5 +1,20 @@
 export default [
   {
+    title: 'Web Security for Developers',
+    author: 'Malcolm McDonald',
+    image: './education/WebSecurity.jpg',
+  },
+  {
+    title: 'Learning Modern Linux',
+    author: 'Michael Hausenblas',
+    image: './education/LearningModernLinux.jpg',
+  },
+  {
+    title: 'C# Concurrency',
+    author: 'Nir Dobovizki',
+    image: './education/csharpconcurrency.png',
+  },
+  {
     title: 'Dependency Injection Principles, Practices, and Patterns',
     author: 'Mark Seemann, Steven van Deursen',
     image: './education/dependencyInjection.jpg',

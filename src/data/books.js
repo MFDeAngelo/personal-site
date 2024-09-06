@@ -1,5 +1,10 @@
 export default [
   {
+    title: 'Geometry for Programmers',
+    author: 'Oleksandr Kaleniuk',
+    image: './education/GeometryForProgrammers.jpg',
+  },
+  {
     title: 'Web Security for Developers',
     author: 'Malcolm McDonald',
     image: './education/WebSecurity.jpg',

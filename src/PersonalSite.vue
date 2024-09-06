@@ -2,7 +2,9 @@
   <div class="container">
     <BackgroundCurves class="background" />
     <AppHeader style="flex: 0 1 auto;"></AppHeader>
-    <router-view class="router" />
+    <div id='page-content'>
+      <router-view class="router" />
+    </div>
   </div>
 </template>
 
@@ -19,9 +21,15 @@ import BackgroundCurves from '@/components/BackgroundCurves.vue';
   height: 100vh;
 }
 
+#page-content {
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+}
+
 .router {
   flex: 0 1 auto;
-  overflow: auto;
+  max-width: 1000px;
 }
 
 .background {

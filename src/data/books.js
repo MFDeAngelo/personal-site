@@ -5,6 +5,11 @@ export default [
     image: './education/GeometryForProgrammers.jpg',
   },
   {
+    title: 'PostgreSQL: Up & Running',
+    author: 'Regina O. Obe & Leo S. Hsu',
+    image: './education/PostgreSQL.png',
+  },
+  {
     title: 'Web Security for Developers',
     author: 'Malcolm McDonald',
     image: './education/WebSecurity.jpg',
@@ -40,6 +45,21 @@ export default [
     image: './education/unitTests.jpg',
   },
   {
+    title: 'Learning Domain-Driven Design',
+    author: 'Vlad Khononov',
+    image: './education/LearningDDD.png',
+  },
+  {
+    title: '"Looks Good To Me"',
+    author: 'Adrienne Braganza',
+    image: './education/LooksGoodToMe.png',
+  },
+  {
+    title: 'Learning Go',
+    author: 'Jon Bodner',
+    image: './education/LearningGo.png',
+  },
+  {
     title: 'Code',
     author: 'Charles Petzold',
     image: './education/code.jpg',
@@ -58,5 +78,20 @@ export default [
     title: 'More Effective C#',
     author: 'Bill Wagner',
     image: './education/moreEffectiveCSharp.jpg',
+  },
+  {
+    title: 'Eloquent Javascript',
+    author: 'Marijn Haverbeke',
+    image: './education/EloquentJavascript.png',
+  },
+  {
+    title: 'Practical Monitoring',
+    author: 'Mike Julian',
+    image: './education/PracticalMonitoring.webp',
+  },
+  {
+    title: 'Learning Systems Thinking',
+    author: 'Diana Montalion',
+    image: './education/LearningSystemsThinking.jpg',
   },
 ];

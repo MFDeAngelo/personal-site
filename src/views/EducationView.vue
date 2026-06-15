@@ -32,7 +32,7 @@
     </div>
 
     <div id="books">
-      <h3 class="section-title">Books Read</h3>
+      <h3 class="section-title">Notable Reading</h3>
       <div class="center-wrap">
         <Book v-for="book in books" :key=book.title :book=book> </Book>
       </div>
